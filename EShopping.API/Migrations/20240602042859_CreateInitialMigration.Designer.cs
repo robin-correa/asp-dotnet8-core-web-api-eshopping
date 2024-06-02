@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EShopping.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240601192747_CreateInitialMigration")]
+    [Migration("20240602042859_CreateInitialMigration")]
     partial class CreateInitialMigration
     {
         /// <inheritdoc />

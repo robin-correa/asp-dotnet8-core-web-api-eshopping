@@ -14,6 +14,6 @@ namespace EShopping.API.Models
         public DateTime? CreatedAt { get; set; } = DateTime.Now;
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
         // Navigation property for many-to-many relationship with Product
-        public List<Product> Products { get; set; } = [];
+        public List<Product>? Products { get; set; } = [];
     }
 }
