@@ -8,7 +8,6 @@ namespace EShopping.API.Models
         [Required]
         public int ProductID { get; set; }
         [Required]
-        [ForeignKey(nameof(ProductCategory))]
         public int ProductCategoryID { get; set; }
         public DateTime? CreatedAt { get; set; } = DateTime.Now;
         [ForeignKey(nameof(ProductID))]
