@@ -1,5 +1,12 @@
 using System.Text.Json.Serialization;
+
 using EShopping.API.Data;
+using EShopping.API.DataTransferObjects.Requests;
+using EShopping.API.Validators;
+
+using FluentValidation;
+using FluentValidation.AspNetCore;
+
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +23,11 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
+
+builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
+
+builder.Services.AddScoped<IValidator<StoreProductRequestDTO>, StoreProductValidator>();
+builder.Services.AddScoped<IValidator<UpdateProductRequestDTO>, UpdateProductValidator>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
